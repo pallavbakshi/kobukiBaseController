@@ -1,0 +1,2 @@
+kobuki_controller_main:kobuki_keyop_pallav
+-DCATKIN_DEVEL_PREFIX=/home/pb/kobuki_pallav/devel -DCMAKE_INSTALL_PREFIX=/home/pb/kobuki_pallav/install -G Unix Makefiles

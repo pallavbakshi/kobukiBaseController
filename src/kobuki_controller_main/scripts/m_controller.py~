@@ -1,0 +1,63 @@
+#!/usr/bin/env python
+
+import rospy
+from geometry_msgs.msg import Twist
+from std_msgs.msg import String
+
+data = Twist()
+#[data.linear.x, data.linear.y, data.linear.z] = [0.2, 0.0, 0.0]
+#[data.angular.x, data.angular.y, data.angular.z] = [0.0, 0.0, 0.0]
+#previousInput = 'R'
+pub = rospy.Publisher('/mobile_base/commands/velocity', Twist, queue_size=100)
+
+def talker(msg):
+	currentInput = msg.data
+	#rospy.init_node('m_controller', anonymous=True)
+	#rate = rospy.Rate(0.5) #frequency
+ 
+	if(currentInput == 'R'):
+		rospy.loginfo('Taking R')
+		data.linear.x = 0.0			
+		data.angular.z = goRight()
+		#rate.sleep()
+	elif(currentInput == 'L'):
+		rospy.loginfo('Taking  L')
+		data.linear.x = 0.0		
+		data.angular.z = goLeft()
+		#rate.sleep()
+	else:
+		rospy.loginfo('Taking U')
+		data.linear.x = 0.2
+	#previousInput = currentInput
+	pub.publish(data)
+		
+
+def goLeft():
+	return 2.735
+
+def goRight():
+	return -2.735
+
+def listener():
+	rospy.init_node('m_controller', anonymous=True)
+	#rate = rospy.Rate(10) #frequency
+	#while not rospy.is_shutdown()
+
+#	data = Twist()
+#	[data.linear.x, data.linear.y, data.linear.z] = [0.2, 0.0, 0.0]
+#	[data.angular.x, data.angular.y, data.angular.z] = [0.0, 0.0, 0.0]
+#	previousInput = 'R'
+#	pub = rospy.Publisher('/mobile_base/commands/velocity', Twist, queue_size=100)
+
+	rospy.Subscriber("/random_direction", String, talker)
+
+	rospy.spin()
+
+if __name__ == '__main__':
+	try:	
+		listener()
+	except rospy.ROSInterruptException:
+		pass
+
+
+

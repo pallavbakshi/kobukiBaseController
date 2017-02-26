@@ -1,0 +1,8 @@
+prefix=/home/pb/kobuki_pallav/devel
+
+Name: kobuki_keyop_pallav
+Description: Description of kobuki_keyop_pallav
+Version: 0.6.8
+Cflags: -I/home/pb/kobuki_pallav/src/kobuki_keyop_pallav/include
+Libs: -L/home/pb/kobuki_pallav/devel/lib -lkobuki
+Requires: geometry_msgs std_srvs std_msgs roscpp ecl_exceptions ecl_threads ecl_time kobuki_msgs

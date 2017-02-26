@@ -1,0 +1,6 @@
+set(kobuki_controller_main_SETUP_PY_VERSION "0.0.0")
+set(kobuki_controller_main_SETUP_PY_SCRIPTS "")
+set(kobuki_controller_main_SETUP_PY_PACKAGES "kobuki_controller_main")
+set(kobuki_controller_main_SETUP_PY_PACKAGE_DIRS "include/kobuki_controller_main")
+set(kobuki_controller_main_SETUP_PY_MODULES "")
+set(kobuki_controller_main_SETUP_PY_MODULE_DIRS "")

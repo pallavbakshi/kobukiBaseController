@@ -1,0 +1,8 @@
+prefix=/home/pb/kobuki_pallav/devel
+
+Name: kobuki_controller_main
+Description: Description of kobuki_controller_main
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/pb/kobuki_pallav/devel/lib 
+Requires: 
